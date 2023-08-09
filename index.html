@@ -19,42 +19,46 @@
 <body>
   <img class="header-logo" src="./images/logo.svg" alt="Splitter">
 <main>
-  <section class="bill">
-    <form class="bill-form">
-      <label>Bill</label>
-      <input type="text" dir="rtl" placeholder="0">
-    </form>
-  </section>
-  <section class="tip-selector">
-    <form class="tip-selector-form">
-      <label>Select Tip %</label>
-      <div class="tip-selector-grid">
-        <button type="button" class="tip-button">5%</button>
-        <button type="button" class="tip-button">10%</button>
-        <button type="button" class="tip-button">15%</button>
-        <button type="button" class="tip-button">25%</button>
-        <button type="button" class="tip-button">50%</button>
-        <input type="text" dir="rtl" placeholder="Custom">
+  <div class="left-side">
+    <section class="bill">
+      <form class="bill-form">
+        <label>Bill</label>
+        <input type="text" dir="rtl" placeholder="0">
+      </form>
+    </section>
+    <section class="tip-selector">
+      <form class="tip-selector-form">
+        <label>Select Tip %</label>
+        <div class="tip-selector-grid">
+          <button type="button" class="tip-button">5%</button>
+          <button type="button" class="tip-button">10%</button>
+          <button type="button" class="tip-button">15%</button>
+          <button type="button" class="tip-button">25%</button>
+          <button type="button" class="tip-button">50%</button>
+          <input type="text" dir="rtl" placeholder="Custom">
+        </div>
+      </form>
+    </section>
+    <section class="number-of-people">
+      <form class="number-of-people-form">
+        <label>Number of People</label>
+        <input type="text" dir="rtl" placeholder="0">
+      </form>
+    </section>
+  </div>
+  <div class="right-side">
+    <section class="result-container">
+      <div class="tip-amount-container">
+        <p class="info">Tip Amount<br><span>/ person</span></p>
+        <p class="tip-amount">$0.00</p>
       </div>
-    </form>
-  </section>
-  <section class="number-of-people">
-    <form class="number-of-people-form">
-      <label>Number of People</label>
-      <input type="text" dir="rtl" placeholder="0">
-    </form>
-  </section>
-  <section class="result-container">
-    <div class="tip-amount-container">
-      <p class="info">Tip Amount<br><span>/ person</span></p>
-      <p class="tip-amount">$0.00</p>
-    </div>
-    <div class="total-container">
-      <p class="info">Total<br><span>/ person</span></p>
-      <p class="total">$0.00</p>
-    </div>
-    <button class="reset-button">Reset</button>
-  </section>
+      <div class="total-container">
+        <p class="info">Total<br><span>/ person</span></p>
+        <p class="total">$0.00</p>
+      </div>
+      <button class="reset-button">Reset</button>
+    </section>
+  </div>
 </main>
  
 </body>

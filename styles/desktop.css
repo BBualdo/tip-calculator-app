@@ -1,27 +1,29 @@
-@media (min-width: 601px) {
+@media (min-width: 737px) {
 
   body {
     align-items: center;
     background-color: var(--lightGrayishCyan);
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
-    height: 100vh;
+    margin-top: 100px;
   }
 
   main {
     align-items: center;
     background-color: white;
-    border-radius: 24px 24px 0 0;
+    border-radius: 24px;
     display: flex;
-    flex-direction: column;
-    margin-top: 10%;
+    margin-top: 100px;
     padding: 32px 32px;
-    width: 100%;
+    max-width: 1000px;
   }
 
-  section {
-    width: 100%;
+  .left-side {
+    width: 50%;
+  }
+
+  .right-side {
+    width: 50%;
   }
 
   .bill-form {
@@ -71,8 +73,8 @@
   .tip-selector-grid {
     display: grid;
     column-gap: 16px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
     margin-top: 16px;
     row-gap: 16px;
   }
@@ -106,9 +108,9 @@
     color: var(--white);
     display: flex;
     flex-direction: column;
-    margin-top: 32px;
-    padding: 20px;
-    width: 104%;
+    height: 450px;
+    margin-left: 48px;
+    padding: 0 40px;
   }
 
   .tip-amount-container,
@@ -136,7 +138,7 @@
   }
 
   .result-container div {
-    margin-top: 24px;
+    margin-top: 56px;
   }
 
   .result-container > button {
@@ -146,7 +148,7 @@
     color: var(--veryDarkCyan);
     cursor: pointer;
     font-size: 20px;
-    margin-top: 24px;
+    margin-top: 168px;
     padding: 10px;
     text-transform: uppercase;
   }
