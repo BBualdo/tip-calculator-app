@@ -1,75 +1,97 @@
-const billAmount = document.getElementById('bill-amount');
+// GLOBAL VARIABLES
+  const billAmount = document.getElementById('bill-amount');
 
-const customTip = document.getElementById('custom-tip');
+  const customTip = document.getElementById('custom-tip');
 
-const peopleAmount = document.getElementById('people-amount');
+  const peopleAmount = document.getElementById('people-amount');
 
-const resetButton = document.querySelector('.reset-button');
+  const errorMessage = document.querySelector('.error');
 
-document.querySelectorAll('.tip-button')
-  .forEach((button) => {
-    button.addEventListener('click', () => {
-    isToggled();
-    button.classList.add('is-toggled')
-    })
-  })
-// Adds toggle to clicked button
-function isToggled() {
+  const resetButton = document.querySelector('.reset-button');
+
+// LOOPS AND EVENT-LISTENERS
   document.querySelectorAll('.tip-button')
     .forEach((button) => {
-      button.classList.remove('is-toggled');
+      button.addEventListener('click', () => {
+      isToggled();
+      button.classList.add('is-toggled');
+      errorCheck();
+      })
     })
-  }
-// removes toggle from all tip buttons
-customTip.addEventListener('click', () => {
-  isToggled();
-})
-// removes toggle from all tip buttons when custom input is chosen
-document.querySelectorAll('input')
-  .forEach((input) => {
-    input.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        calculation();
-      }
-    })
+  // Adds toggle to clicked button
+
+  customTip.addEventListener('click', () => {
+    isToggled();
   })
-// runs calculation when you hit ENTER in any input
-function calculation() {
-  const tipButton = document.querySelector('.is-toggled');
+  // removes toggle from all tip buttons when custom input is chosen
+  document.querySelectorAll('input')
+    .forEach((input) => {
+      input.addEventListener('keyup', (event) => {
+        errorCheck()
+        })
+    })
+  // runs calculation when you hit ENTER in any input
 
-  if (tipButton) {
-    let tip = parseInt(tipButton.innerHTML);
-    calculate(tip);
-  } else if (!tipButton) {
-    let tip = parseInt(customTip.value);
-    calculate(tip);
+  resetButton.addEventListener('click', () => {
+    // When reset button is clicked:
+    document.querySelector('.tip-amount').innerHTML = '$0.00';
+    document.querySelector('.total').innerHTML = '$0.00';
+    // - changes amounts to 0
+    billAmount.value = '';
+    isToggled();
+    customTip.value = '';
+    peopleAmount.value = '';
+    // - clears all fields and buttons
+    resetButton.classList.remove('activated');
+    // deactivates a reset button
+  })
+
+// FUNCTIONS
+  function isToggled() {
+    document.querySelectorAll('.tip-button')
+      .forEach((button) => {
+        button.classList.remove('is-toggled');
+      })
+    }
+  // removes toggle from all tip buttons
+
+  function calculation() {
+    const tipButton = document.querySelector('.is-toggled');
+
+    if (tipButton) {
+      let tip = parseInt(tipButton.innerHTML);
+      calculate(tip);
+    } else if (!tipButton) {
+      let tip = parseInt(customTip.value);
+      calculate(tip);
+    }
+    // checks where should be value taken from
+    function calculate(tip) {
+      let tipAmountInCents = ((billAmount.value * 100) * (tip / 100) / peopleAmount.value);
+    
+      let totalInCents = ((billAmount.value * 100) / peopleAmount.value + tipAmountInCents);
+    
+      document.querySelector('.tip-amount').innerHTML = `$${(tipAmountInCents / 100).toFixed(2)}`;
+    
+      document.querySelector('.total').innerHTML = `$${(totalInCents / 100).toFixed(2)}`;
+    }
+    //calculates and shows Tip Amount and Total in dollars
+
+    resetButton.classList.add('activated');
+    // sets button to active status
   }
-  // checks where should be value taken from
-  function calculate(tip) {
-    let tipAmountInCents = ((billAmount.value * 100) * (tip / 100) / peopleAmount.value);
-  
-    let totalInCents = ((billAmount.value * 100) / peopleAmount.value + tipAmountInCents);
-  
-    document.querySelector('.tip-amount').innerHTML = `$${(tipAmountInCents / 100).toFixed(2)}`;
-  
-    document.querySelector('.total').innerHTML = `$${(totalInCents / 100).toFixed(2)}`;
+
+  function errorCheck() {
+    if (peopleAmount.value == 0) {
+      errorMessage.classList.remove('hidden');
+      errorMessage.innerHTML = 'Can\'t be zero';
+    } else if (peopleAmount.value < 0) {
+      errorMessage.classList.remove('hidden');
+      errorMessage.innerHTML = 'Must be positive';
+    // first checks if there is valid people amount
+    } else {
+      errorMessage.classList.add('hidden');
+      calculation();
+    // if it is - hide error and run the function
+    }
   }
-  //calculates and shows Tip Amount and Total in dollars
-
-  resetButton.classList.add('activated');
-  // sets button to active status
-}
-
-resetButton.addEventListener('click', () => {
-  // When reset button is clicked:
-  document.querySelector('.tip-amount').innerHTML = '$0.00';
-  document.querySelector('.total').innerHTML = '$0.00';
-  // - changes amounts to 0
-  billAmount.value = '';
-  isToggled();
-  customTip.value = '';
-  peopleAmount.value = '';
-  // - clears all fields and buttons
-  resetButton.classList.remove('activated');
-  // deactivates a reset button
-})
