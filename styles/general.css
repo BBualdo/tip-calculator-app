@@ -55,6 +55,7 @@ input {
   font-size: 24px;
   margin-top: 4px;
   padding: 4px 20px;
+  text-align: right;
 }
 
 input:hover {
@@ -86,7 +87,7 @@ input:focus {
   row-gap: 16px;
 }
 
-.tip-selector-grid > button {
+.tip-button {
   background-color: var(--veryDarkCyan);
   border: none;
   border-radius: 4px;
@@ -169,4 +170,8 @@ input:focus {
 
   .tip-selector-grid > button:hover {
     color: var(--veryDarkCyan);
+  }
+
+  .is-toggled {
+    background-color: var(--strongCyan);
   }

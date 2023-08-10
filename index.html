@@ -21,13 +21,13 @@
 <main>
   <div class="left-side">
     <section class="bill">
-      <form class="bill-form">
+      <form onsubmit="return false" class="bill-form">
         <label>Bill</label>
-        <input type="text" dir="rtl" placeholder="0">
+        <input id="bill-amount" type="text" placeholder="0">
       </form>
     </section>
     <section class="tip-selector">
-      <form class="tip-selector-form">
+      <form onsubmit="return false" class="tip-selector-form">
         <label>Select Tip %</label>
         <div class="tip-selector-grid">
           <button type="button" class="tip-button">5%</button>
@@ -35,17 +35,17 @@
           <button type="button" class="tip-button">15%</button>
           <button type="button" class="tip-button">25%</button>
           <button type="button" class="tip-button">50%</button>
-          <input type="text" dir="rtl" placeholder="Custom">
+          <input id="custom-tip" type="text" dir="rtl" placeholder="Custom">
         </div>
       </form>
     </section>
     <section class="number-of-people">
-      <form class="number-of-people-form">
+      <form onsubmit="return false" class="number-of-people-form">
         <div class="number-of-people-container">
           <label>Number of People</label>
           <p class="hidden zero-error">Can't be zero</p>
         </div>
-        <input type="text" dir="rtl" placeholder="0">
+        <input id="people-amount" type="text" dir="rtl" placeholder="0">
       </form>
     </section>
   </div>
