@@ -18,6 +18,8 @@ const customTip = document.getElementById('custom-tip');
 
 const peopleAmount = document.getElementById('people-amount');
 
+const resetButton = document.querySelector('.reset-button');
+
 document.querySelectorAll('.tip-button')
   .forEach((button) => {
     button.addEventListener('click', () => {
@@ -67,4 +69,12 @@ function calculation() {
     document.querySelector('.total').innerHTML = `$${(totalInCents / 100).toFixed(2)}`;
   }
   //calculates and shows Tip Amount and Total in dollars
+
+  resetButton.classList.add('activated');
 }
+
+resetButton.addEventListener('click', () => {
+  document.querySelector('.tip-amount').innerHTML = '$0.00';
+  document.querySelector('.total').innerHTML = '$0.00';
+  resetButton.classList.remove('activated');
+})
