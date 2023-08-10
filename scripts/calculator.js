@@ -1,17 +1,3 @@
-/* 
-Algorithm:
-
-  1. Program takes bill input value in cents.
-  2. * it by value in toggled tip button or custom input.
-  3. / it by value in people input.
-  4. Shows result in Tip Amount in dolars.
-  
-  1. Program takes bill input value in cents.
-  2. / it by value in people input.
-  3. + result in Tip Amount.
-  4. Shows result in Total in dolars.
-*/
-
 const billAmount = document.getElementById('bill-amount');
 
 const customTip = document.getElementById('custom-tip');
@@ -71,10 +57,19 @@ function calculation() {
   //calculates and shows Tip Amount and Total in dollars
 
   resetButton.classList.add('activated');
+  // sets button to active status
 }
 
 resetButton.addEventListener('click', () => {
+  // When reset button is clicked:
   document.querySelector('.tip-amount').innerHTML = '$0.00';
   document.querySelector('.total').innerHTML = '$0.00';
+  // - changes amounts to 0
+  billAmount.value = '';
+  isToggled();
+  customTip.value = '';
+  peopleAmount.value = '';
+  // - clears all fields and buttons
   resetButton.classList.remove('activated');
+  // deactivates a reset button
 })
