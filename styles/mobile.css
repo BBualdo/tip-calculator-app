@@ -1,22 +1,14 @@
 @media (max-width: 736px) {
 
   body {
-    align-items: center;
-    background-color: var(--lightGrayishCyan);
-    display: flex;
-    flex-direction: column;
     margin-top: 40px;
     height: 100vh;
   }
 
   main {
-    align-items: center;
-    background-color: white;
     border-radius: 24px 24px 0 0;
-    display: flex;
     flex-direction: column;
     margin-top: 40px;
-    padding: 32px 32px;
     width: 100%;
   }
 
@@ -28,114 +20,14 @@
     width: 104%;
   }
 
-  .bill-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  label {
-    color: var(--darkGrayishCyan);
-  }
-
-  input {
-    background-color: var(--veryLightGrayishCyan);
-    border: none;
-    border-radius: 4px;
-    color: var(--veryDarkCyan);
-    cursor: pointer;
-    font-size: 24px;
-    margin-top: 4px;
-    padding: 4px 20px;
-  }
-
-  input:hover {
-    outline: 2px solid var(--strongCyan)
-  }
-
-  input:focus {
-    caret-color: var(--strongCyan);
-    outline-color: var(--strongCyan);
-  }
-
-  .bill-form > input {
-    background-image: url(./images/icon-dollar.svg);
-    background-position: left;
-    background-position-x: 20px;
-    background-repeat: no-repeat;
-  }
-
-  .tip-selector-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
-    width: 100%;
-  }
-
   .tip-selector-grid {
-    display: grid;
-    column-gap: 16px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
-    margin-top: 16px;
-    row-gap: 16px;
-  }
-
-  .tip-selector-grid > button {
-    background-color: var(--veryDarkCyan);
-    border: none;
-    border-radius: 4px;
-    color: var(--white);
-    cursor: pointer;
-    font-size: 24px;
-  }
-
-  .number-of-people-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
-    width: 100%;
-  }
-
-  .number-of-people-form > input {
-    background-image: url(./images/icon-person.svg);
-    background-position: left;
-    background-position-x: 16px;
-    background-repeat: no-repeat;
   }
 
   .result-container {
-    background-color: var(--veryDarkCyan);
-    border-radius: 16px;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
     margin-top: 32px;
     padding: 20px;
-  }
-
-  .tip-amount-container,
-  .total-container {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    line-height: 20px;
-  }
-
-  .info {
-    font-size: 15px;
-    letter-spacing: 1px;
-  }
-
-  .result-container span {
-    color: var(--grayishCyan);
-    font-size: 12px;
-  }
-
-  .tip-amount,
-  .total {
-    color: var(--strongCyan);
-    font-size: 32px;
   }
 
   .result-container div {
@@ -143,22 +35,6 @@
   }
 
   .result-container > button {
-    background-color: var(--strongCyan);
-    border: none;
-    border-radius: 4px;
-    color: var(--veryDarkCyan);
-    cursor: pointer;
-    font-size: 20px;
     margin-top: 24px;
-    padding: 10px;
-    text-transform: uppercase;
-  }
-
-  button:hover {
-    background-color: var(--strongCyanHover);
-  }
-
-  .tip-selector-grid > button:hover {
-    color: var(--veryDarkCyan);
   }
 }
