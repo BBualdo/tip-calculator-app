@@ -41,21 +41,30 @@ document.querySelectorAll('input')
   .forEach((input) => {
     input.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        calculate();
+        calculation();
       }
     })
   })
 // runs calculation when you hit ENTER in any input
-function calculate() {
+function calculation() {
   const tipButton = document.querySelector('.is-toggled');
-  const tip = parseInt(tipButton.innerHTML);
 
-  let tipAmountInCents = ((billAmount.value * 100) * (tip / 100) / peopleAmount.value);
-
-  let totalInCents = ((billAmount.value * 100) / peopleAmount.value + tipAmountInCents);
-
-  document.querySelector('.tip-amount').innerHTML = `$${(tipAmountInCents / 100).toFixed(2)}`;
-
-  document.querySelector('.total').innerHTML = `$${(totalInCents / 100).toFixed(2)}`;
+  if (tipButton) {
+    let tip = parseInt(tipButton.innerHTML);
+    calculate(tip);
+  } else if (!tipButton) {
+    let tip = parseInt(customTip.value);
+    calculate(tip);
+  }
+  // checks where should be value taken from
+  function calculate(tip) {
+    let tipAmountInCents = ((billAmount.value * 100) * (tip / 100) / peopleAmount.value);
+  
+    let totalInCents = ((billAmount.value * 100) / peopleAmount.value + tipAmountInCents);
+  
+    document.querySelector('.tip-amount').innerHTML = `$${(tipAmountInCents / 100).toFixed(2)}`;
+  
+    document.querySelector('.total').innerHTML = `$${(totalInCents / 100).toFixed(2)}`;
+  }
+  //calculates and shows Tip Amount and Total in dollars
 }
-//calculates and shows Tip Amount and Total in dollars
