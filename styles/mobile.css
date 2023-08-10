@@ -20,14 +20,27 @@
     width: 104%;
   }
 
+  .tip-selector-form {
+    margin-top: 32px;
+  }
+
   .tip-selector-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
   }
 
+  .number-of-people-form {
+    margin-top: 32px;
+  }
+
   .result-container {
     margin-top: 32px;
     padding: 20px;
+  }
+
+  .tip-amount,
+  .total {
+    font-size: 32px;
   }
 
   .result-container div {

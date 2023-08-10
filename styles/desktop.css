@@ -11,6 +11,11 @@
   }
 
   .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 450px;
+    padding-left: 20px;
     width: 50%;
   }
 
@@ -18,15 +23,28 @@
     width: 50%;
   }
 
+  .tip-selector-form {
+    margin-top: 44px;
+  }
+
   .tip-selector-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .number-of-people-form {
+    margin-top: 44px;
   }
 
   .result-container {
     height: 450px;
     margin-left: 48px;
     padding: 0 40px;
+  }
+
+  .tip-amount,
+  .total {
+    font-size: 48px;
   }
 
   .result-container div {

@@ -76,7 +76,6 @@ input:focus {
 .tip-selector-form {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
   width: 100%;
 }
 
@@ -99,7 +98,6 @@ input:focus {
 .number-of-people-form {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
   width: 100%;
 }
 
@@ -152,7 +150,6 @@ input:focus {
   .tip-amount,
   .total {
     color: var(--strongCyan);
-    font-size: 32px;
   }
 
   .result-container > button {
